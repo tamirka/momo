@@ -123,11 +123,11 @@ export type Database = {
 }
 
 // Custom types for the application
+export type Profile = Database['public']['Tables']['profiles']['Row'];
+export type Message = Database['public']['Tables']['messages']['Row'];
 export type Product = Database['public']['Tables']['products']['Row'] & {
     profiles: Pick<Profile, 'company_name'> | null;
 };
-export type Profile = Database['public']['Tables']['profiles']['Row'];
-export type Message = Database['public']['Tables']['messages']['Row'];
 export type Conversation = {
     participant: Profile;
     messages: Message[];
