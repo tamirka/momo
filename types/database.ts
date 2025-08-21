@@ -71,6 +71,22 @@ export type Database = {
             total: number;
             status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
             created_at: string;
+        },
+        Insert: {
+          buyer_id: string;
+          supplier_id: string;
+          product_id: number;
+          total: number;
+          status: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
+        },
+        Update: {
+          id?: number;
+          buyer_id?: string;
+          supplier_id?: string;
+          product_id?: number;
+          total?: number;
+          status?: 'Processing' | 'Shipped' | 'Delivered' | 'Cancelled';
+          created_at?: string;
         }
       }
       quotes: {
@@ -81,6 +97,20 @@ export type Database = {
             product_id: number;
             status: 'Pending' | 'Response Received' | 'Accepted' | 'Expired';
             created_at: string;
+        },
+        Insert: {
+          buyer_id: string;
+          supplier_id: string;
+          product_id: number;
+          status: 'Pending' | 'Response Received' | 'Accepted' | 'Expired';
+        },
+        Update: {
+          id?: number;
+          buyer_id?: string;
+          supplier_id?: string;
+          product_id?: number;
+          status?: 'Pending' | 'Response Received' | 'Accepted' | 'Expired';
+          created_at?: string;
         }
       }
       messages: {
@@ -95,6 +125,13 @@ export type Database = {
           sender_id: string
           receiver_id: string
           content: string
+        },
+        Update: {
+          id?: number
+          sender_id?: string
+          receiver_id?: string
+          content?: string
+          created_at?: string
         }
       }
     }
