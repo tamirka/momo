@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yazbox | Custom B2B Packaging Marketplace</title>
+    <meta name="description" content="The first on-demand packaging marketplace where users can design, print, and ship custom boxes. Get instant quotes and streamline your packaging procurement." />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#0D9488', // Teal 600
+                hover: '#0F766E', // Teal 700
+                focus: '#115E59', // Teal 800
+              },
+              secondary: '#F1F5F9', // Slate 100
+              accent: '#F59E0B', // Amber 500
+              neutral: {
+                light: '#F8FAFC', // Slate 50
+                DEFAULT: '#64748B', // Slate 500
+                dark: '#1E293B', // Slate 800
+              },
+            },
+          },
+        },
+      }
+    </script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.1",
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@^2.45.0"
+  }
+}
+</script>
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #F8FAFC; /* Updated to new neutral-light */
+    background-image: radial-gradient(#d1d5db 0.5px, transparent 0.5px), radial-gradient(#d1d5db 0.5px, #F8FAFC 0.5px);
+    background-size: 20px 20px;
+    background-position: 0 0, 10px 10px;
+  }
+</style>
+</head>
+  <body class="bg-neutral-light">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
