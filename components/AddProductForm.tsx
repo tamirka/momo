@@ -116,7 +116,7 @@ const AddProductForm: React.FC<AddProductFormProps> = ({ onSave, onCancel }) => 
             image_url: imageUrl,
         };
 
-        const { error: insertError } = await supabase.from('products').insert(productToInsert);
+        const { error: insertError } = await supabase.from('products').insert([productToInsert]);
         if (insertError) throw insertError;
         
         onSave();

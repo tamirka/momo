@@ -3,7 +3,9 @@ import Modal from '../../components/Modal';
 import AddProductForm from '../../components/AddProductForm';
 import { supabase } from '../../lib/supabaseClient';
 import { useAuth } from '../../auth/Auth';
-import { Product } from '../../types/database';
+import { Database } from '../../types/database';
+
+type Product = Database['public']['Tables']['products']['Row'];
 
 const SupplierProductsPage: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -25,7 +27,7 @@ const SupplierProductsPage: React.FC = () => {
     if (queryError) {
       setError(queryError.message);
     } else {
-      setProducts(data as Product[]);
+      setProducts(data || []);
     }
     setLoading(false);
   }, [user]);

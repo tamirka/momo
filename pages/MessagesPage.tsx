@@ -31,7 +31,7 @@ const MessagesPage: React.FC = () => {
              if (error) {
                  console.error("Error fetching conversations:", error);
              } else {
-                 setConversations(data || []);
+                 setConversations((data as ConversationParticipant[]) || []);
                  if (data && data.length > 0) {
                     // setActiveConversation(data[0]); // Don't auto-select on mobile
                  }
@@ -101,7 +101,7 @@ const MessagesPage: React.FC = () => {
             content: newMessage,
         };
 
-        const { data, error } = await supabase.from('messages').insert(messageToSend).select().single();
+        const { data, error } = await supabase.from('messages').insert([messageToSend]).select().single();
         if (error) {
             console.error("Error sending message:", error);
         } else {

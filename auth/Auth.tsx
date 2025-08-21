@@ -70,12 +70,12 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     if (authError) throw authError;
     if (!authData.user) throw new Error("Signup successful, but no user data returned.");
     
-    const { error: profileError } = await supabase.from('profiles').insert({
+    const { error: profileError } = await supabase.from('profiles').insert([{
         id: authData.user.id,
         email,
         role,
         company_name: companyName,
-    });
+    }]);
     
     if (profileError) throw profileError;
     
